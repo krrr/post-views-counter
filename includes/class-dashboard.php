@@ -175,9 +175,7 @@ class Post_Views_Counter_Dashboard {
 			$html .= $this->generate_dashboard_widget_item( $item, $menu_items );
 		}
 
-		$html .= '
-			<div class="pvc-dashboard-block"><span>' . esc_html__( 'Powered by', 'post-views-counter' ) . ' <a href="https://postviewscounter.com/?utm_source=post-views-counter-lite&utm_medium=link&utm_campaign=powered-by" target="_blank">Post Views Counter</a></span></div>
-		</div>';
+		$html .= '</div>';
 
 		echo $html;
 	}

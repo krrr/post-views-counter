@@ -40,11 +40,8 @@ if ( ! class_exists( 'Post_Views_Counter' ) ) {
 		public $defaults = [
 			'general'	=> [
 				'post_types_count'		=> [ 'post' ],
-				'taxonomies_count'		=> false,
-				'users_count'			=> false,
 				'other_count'			=> false,
 				'data_storage'			=> 'cookies',
-				'amp_support'			=> false,
 				'counter_mode'			=> 'php',
 				'post_views_column'		=> true,
 				'restrict_edit_views'	=> false,
@@ -66,7 +63,6 @@ if ( ! class_exists( 'Post_Views_Counter' ) ) {
 					'roles'	 => []
 				],
 				'exclude_ips'			=> [],
-				'strict_counts'			=> false,
 				'cron_run'				=> true,
 				'cron_update'			=> true,
 				'update_version'		=> 1,
@@ -76,8 +72,6 @@ if ( ! class_exists( 'Post_Views_Counter' ) ) {
 			'display'	=> [
 				'label'					=> 'Post Views:',
 				'display_period'		=> 'total',
-				'taxonomies_display'	=> [],
-				'user_display'			=> false,
 				'post_types_display'	=> [ 'post' ],
 				'page_types_display'	=> [ 'singular' ],
 				'restrict_display'		=> [
@@ -875,25 +869,6 @@ if ( ! class_exists( 'Post_Views_Counter' ) ) {
 			// media
 			elseif ( $page === 'upload.php' )
 				wp_enqueue_style( 'pvc-admin' );
-
-			// register and enqueue styles
-			wp_register_style( 'pvc-pro-style', false );
-			wp_enqueue_style( 'pvc-pro-style' );
-
-			// add styles
-			wp_add_inline_style( 'pvc-pro-style', '
-			.post-views-counter-settings tr.pvc-pro th:after, .nav-tab-wrapper a.nav-tab.nav-tab-disabled.pvc-pro:after, .post-views-counter-settings tr.pvc-pro-extended label[for="post_views_counter_general_counter_mode_ajax"]:after {
-				content: \'PRO\';
-				display: inline;
-				background-color: #ffc107;
-				color: white;
-				padding: 2px 4px;
-				text-align: center;
-				border-radius: 4px;
-				margin-left: 4px;
-				font-weight: bold;
-				font-size: 11px;
-			}' );
 		}
 
 		/**

@@ -76,9 +76,6 @@ class Post_Views_Counter_Update {
 			// get general options
 			$general = $pvc->options['general'];
 
-			// disable strict counts
-			$general['strict_counts'] = false;
-
 			// get default other options
 			$other_options = $pvc->defaults['other'];
 
